@@ -1,0 +1,369 @@
+/* 全部分类菜单 */
+.slider-nav {
+	background-color: rgba(0, 0, 0, 0.6);
+	width: 234px;
+	height: 420px;
+	border: none;
+}
+
+.slider-nav .slider-li .name {
+	color: #fff;
+
+}
+
+#pag-all-nav .slider-nav {
+	visibility: visible;
+}
+
+/* 首页轮播 */
+.box {
+	width: 1206px;
+	height: 460px;
+	margin: 20px auto;
+	margin-bottom: 0;
+	overflow: hidden;
+	position: relative;
+	top: -20px;
+}
+
+.box-1 ul {}
+
+.box-1 ul li {
+	width: 1206px;
+	height: 460px;
+	position: relative;
+	overflow: hidden;
+}
+
+.box-1 ul li img {
+	display: block;
+	width: 1206px;
+	height: 460px;
+}
+
+.box-2 {
+	position: absolute;
+	right: 10px;
+	bottom: 14px;
+}
+
+.box-2 ul li {
+	float: left;
+	width: 12px;
+	height: 12px;
+	overflow: hidden;
+	margin: 0 5px;
+	border-radius: 50%;
+	background: rgba(0, 0, 0, 0.5);
+	text-indent: 100px;
+	cursor: pointer;
+}
+
+.box-2 ul .on {
+	background: rgba(255, 255, 255, 0.6);
+}
+
+.box-3 span {
+	position: absolute;
+	color: white;
+	/* background: rgba(125, 125, 120, .3); */
+	width: 42px;
+	height: 70px;
+	top: 50%;
+	font-family: "宋体";
+	line-height: 80px;
+	font-size: 40px;
+	margin-top: -40px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.box-3 .prev {
+	left: 234px;
+}
+
+.box-3 .next {
+	right: 0;
+}
+
+.box-3 span::selection {
+	background: transparent;
+}
+
+.box-3 span:hover {
+	background: rgba(125, 125, 120, .8);
+}
+/* 广告图 */
+.idx-adv img {
+	width: 100%;
+	display: block;
+}
+
+/* 大内容区 */
+.idx-container {
+	background-color: #f5f5f5;
+	margin-top: 10px;
+	overflow: hidden;
+}
+.idx-container .idx-adv{
+	margin-top:40px ;
+}
+
+.idx-title {
+	overflow: hidden;
+	margin-top: 20px;
+	clear: both;
+}
+
+.idx-title .tit {
+	font-size: 22px;
+	color: #666;
+	line-height: 60px;
+}
+
+.idx-title .see-all {
+	float: right;
+	font-size: 16px;
+	color: #666;
+	position: relative;
+	top: 25px;
+
+}
+
+.idx-title .see-all:hover {
+	color: #FF6700;
+
+}
+
+.idx-title .list li{
+	display: inline-block;
+	font-size: 16px;
+	margin-left: 26px;
+	padding-bottom: 3px;
+}
+.idx-title .list  li .active,
+.idx-title .list li:hover{
+	color: #FF6700;
+}
+.idx-title .list  li span{
+	cursor: pointer;
+}
+.idx-container .col-5{
+width: 229px;
+margin-left: 10px;
+margin-bottom: 15px; 
+float: left;
+}
+.idx-container .col-5 .col-6{
+width: 229px;
+margin-left: 15px;
+margin-bottom: 15px; 
+float: left;
+}
+.idx-container .idx-box{
+	/* height: 615px; */
+	clear: both;
+}
+.idx-box  .adv-box{
+	float: left;
+}
+
+
+/* 左边 手机*/
+
+/* 左边  家电 */
+
+/* 右边 */
+.idx-box  .good-box{
+	float: right;
+	width:1206px;
+}
+.idx-box .good-item{
+	background-color: #fff;
+	height: 300px;
+
+}
+
+.idx-box .good-item .pic img{
+	width: 140px;
+	height: 160px;
+	display: block;
+	margin: 20px auto;
+}
+.idx-box .good-item .name,
+.idx-box .good-item .desc{
+
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-align: center;
+	font-weight: normal;
+	font-size: 13px;
+}
+.idx-box .good-item .name{
+	width: 200px;
+	margin: 0 auto 10px;	
+
+}
+.idx-box .good-item .desc{
+	width: 210px;
+	color: #b0b0b0;
+	margin: 0 auto;
+}
+.idx-box .good-item .price{
+	margin-top: 20px;
+		text-align: center;
+}
+.idx-box .good-item .price span{
+	color: #FF6700;
+}
+.idx-box .good-item .price i{
+	font-style: normal;
+	text-decoration:line-through ;
+	margin-left: 5px;
+	color: #b0b0b0;
+}
+.se-kl:hover,
+#myscroll li:hover,
+.idx-box .single:hover,
+.idx-box .good-item:hover,
+.idx-box .double:hover,
+.idx-box .last-more .good-top:hover,
+.idx-box .last-more .good-more:hover{
+	box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+	transform: translate3d(0,-2px,0);
+}
+/* 更多 */
+.idx-box .last-more {
+	background-color: #f5f5f5;
+	background-color: transparent ;
+}
+.idx-box .last-more:hover{
+	box-shadow: none;
+	transform: none;
+}
+.idx-box .last-more .good-top,
+.idx-box .last-more .good-more{
+	background-color: #fff;
+	height:142px;
+	margin-bottom:15px;
+}
+.idx-box .last-more .good-top .sm-img{
+	width: 80px;
+	height: 80px;
+	float: right;
+	margin-right: 20px;
+	margin-top: 35px;
+}
+.idx-box .last-more .good-top .sm-img img{
+	width: 80px;
+	height: 80px;
+	display: block;
+}
+.idx-box .last-more .txt{
+	margin-left: 30px;
+	overflow: hidden;
+}
+.idx-box .last-more .txt h3{
+	font-weight: normal;
+}
+.idx-box .last-more .good-top .txt{
+	float: left;
+	margin-top: 40px;
+}
+.idx-box .last-more .good-top h3{
+	width: 94px;
+	white-space: nowrap;
+	overflow:hidden;
+	text-align:ellipsis ;
+}
+.idx-box .last-more .good-top p{
+	color: #FF6700;
+	line-height: 30px;
+}
+.idx-box .last-more .good-more{
+	position: relative;
+}
+.idx-box .last-more .good-more h3{
+	font-size: 18px;
+	margin-top:40px ;
+}
+.idx-box .last-more .good-more p{
+	line-height: 30px;
+}
+.idx-box .last-more .good-more i{
+	font-size: 60px;
+	color: #FF6700;
+	position: absolute;
+	top: 40px;
+	right: 40px;
+}
+/* 视频 */
+.idx-container .col-4{
+	width: 290px;
+	float: left;
+	margin-right: 15px;
+}
+.idx-container .col-4 img{
+	width: 100%;
+
+}
+.idx-container .col-4:last-child,
+.idx-container .col-4 .last{
+	margin-right: 0px;
+}
+
+.video{
+	margin-bottom:40px ;
+		height: 285px;
+}
+.video .item{
+	background-color: #fff;
+		height: 285px;
+}
+.video .item .pic,
+.video .item .pic img{
+	display: block;
+}
+.video .item .pic{
+	position: relative;
+}
+.video .item .pic .play{
+	display: block;
+	width: 32px;
+	height: 20px;
+	position: absolute;
+	left: 20px;
+	bottom: 10px;
+	border:  2px solid #fff;
+	border-radius: 12px;
+	text-align: center;
+}
+.video .item .play i{
+	width: 0px;
+	height: 0px;
+	display: inline-block;
+	border-top: 6px solid transparent;
+	border-left: 10px solid #fff;
+	border-right: 5px solid transparent;
+	border-bottom: 6px solid transparent;
+	position: relative;
+	position: 3px;
+	top: 3px;
+	left: 3px;
+}
+.video .item h3{
+	margin: 0 40px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-align: ellipsis;
+	font-weight: normal;
+	text-align: center;
+	font-size: 14px;
+	margin-top: 30px;
+}
+.video .item .pic:hover .play{
+	background-color: #FF6700;
+	border-color: #FF6700;
+}
+/* 小米闪购 */

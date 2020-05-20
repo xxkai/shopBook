@@ -1,0 +1,87 @@
+{
+  "clearInfo": {
+    "clearUrl": "api/clear.json"
+  },
+  "homeInfo": {
+    "title": "首页",
+    "icon": "fa fa-home",
+    "href": "page/welcome-1.html"
+  },
+  "logoInfo": {
+    "title": "网上图书商城",
+    "image": "images/logo.png",
+    "href": ""
+  },
+  "menuInfo": {
+    "currency": {
+      "title": "主页",
+      "icon": "fa fa-address-book",
+      "child": [
+        {
+          "title": "主页模板",
+          "href": "page/welcome-1.html",
+          "icon": "fa fa-home",
+          "target": "_self"
+        },
+        {
+          "title": "图书管理",
+          "href": "page/book/list.jsp",
+          "icon": "fa fa-window-maximize",
+          "target": "_self"
+        },
+        {
+          "title": "用户管理",
+          "href": "page/user/list.jsp",
+          "icon": "fa fa-gears",
+          "target": "_self"
+        },
+        {
+          "title": "类型表",
+          "href": "",
+          "icon": "fa fa-calendar",
+          "target": "_self",
+          "child": [
+            {
+              "title": "出版社",
+              "href": "page/publishers/list.jsp",
+              "icon": "fa fa-navicon",
+              "target": "_self"
+            },
+            {
+              "title": "图书类型",
+              "href": "page/categorys/list.jsp",
+              "icon": "fa fa-navicon",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "库存管理",
+          "href": "",
+          "icon": "fa fa-calendar",
+          "target": "_self",
+          "child": [
+            {
+              "title": "入库信息表",
+              "href": "page/storein/list.jsp",
+              "icon": "fa fa-navicon",
+              "target": "_self"
+            },
+            {
+              "title": "出库信息表",
+              "href": "page/storeout/list.jsp",
+              "icon": "fa fa-navicon",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "订单管理",
+          "href": "page/order/list.jsp",
+          "icon": "fa fa-flag-o",
+          "target": "_self"
+        }
+      ]
+    }
+  }
+}
