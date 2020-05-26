@@ -19,7 +19,7 @@ public class StoreinServiceImpl implements StoreinService {
 		int bookId = storein.getBookId();
 		int storeinNum = storein.getStoreinNum();
 		if (bookId!=0) {
-			String sql = "update books set num= ? where bookId=?";
+			String sql = "update book set num= ? where bookId=?";
 			Connection con = DruidUtil.getConn();
 			PreparedStatement pstmt =  con.prepareStatement(sql);
 			pstmt.setInt(1, storeinNum);

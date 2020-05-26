@@ -12,7 +12,7 @@ import xxk.train.entity.Book;
  * 		
  *
  */
-public interface BooksService {
+public interface BookService {
 	public int insert(Book books)throws Exception;//图书的添加
 	public int update(Book books) throws Exception;//根据books对books进行修改
 	public int delete(Integer id) throws Exception;//根据id删除内容

@@ -39,7 +39,6 @@ public class StoreinDaoImpl implements StoreinDao {
 	@Override
 	//根据id获得对象，可以整合
 	public Storein getOne(Integer id) throws Exception {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	//得到入库表信息，得到，查询条件的数组的值

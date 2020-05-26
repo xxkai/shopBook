@@ -68,7 +68,7 @@ public class CartDaoImpl implements CartDao{
 			cart.setNum(rs.getInt("num"));
 			Connection con1 = DruidUtil.getConn();
 			Map<String, Object> map = new HashMap<String, Object>();
-			String sql1 = "SELECT title,image,unitPrice FROM cart,books WHERE cart.bookId = books.bookId AND cart.cartId = ?";
+			String sql1 = "SELECT title,image,unitPrice FROM cart,book WHERE cart.bookId = book.bookId AND cart.cartId = ?";
 			PreparedStatement pstmt1 = con.prepareStatement(sql1);
 			pstmt1.setInt(1, cart.getCartId());
 			ResultSet rs1 = pstmt1.executeQuery();

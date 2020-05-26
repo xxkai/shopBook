@@ -168,11 +168,6 @@ float: left;
 	float: left;
 }
 
-
-/* 左边 手机*/
-
-/* 左边  家电 */
-
 /* 右边 */
 .idx-box  .good-box{
 	float: right;
@@ -275,7 +270,7 @@ float: left;
 	width: 94px;
 	white-space: nowrap;
 	overflow:hidden;
-	text-align:ellipsis ;
+	text-align: center;
 }
 .idx-box .last-more .good-top p{
 	color: #FF6700;
@@ -366,4 +361,3 @@ float: left;
 	background-color: #FF6700;
 	border-color: #FF6700;
 }
-/* 小米闪购 */

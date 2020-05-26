@@ -69,8 +69,8 @@ public class UserServiseImpl implements UserService {
 				user.setPhone(rs.getString("phone"));
 				user.setNoAdmin(rs.getInt("noAdmin"));
 				user.setFrist_time(rs.getTimestamp("frist_time"));
-				user.setLast_time(rs.getTimestamp("last_time"));	
-				System.out.println(result);
+				user.setLast_time(rs.getTimestamp("last_time"));
+				user.setNoDel(rs.getInt("noDel"));
 			}else {
 				System.out.println(result);
 			}

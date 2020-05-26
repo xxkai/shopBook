@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import xxk.train.entity.Book;
 import xxk.train.entity.Category;
 import xxk.train.entity.Publisher;
-import xxk.train.service.BooksService;
+import xxk.train.service.BookService;
 import xxk.train.service.CategorysServlet;
 import xxk.train.service.PublishersService;
 import xxk.train.service.impl.BooksServiceImpl;
@@ -22,7 +22,7 @@ import xxk.train.service.impl.PublishersServiceImpl;
  * Servlet implementation class GotoShopAction
  */
 public class GotoShopAction extends HttpServlet {
-	BooksService booksService = new BooksServiceImpl();
+	BookService booksService = new BooksServiceImpl();
 	PublishersService publishersService = new PublishersServiceImpl();
 	private CategorysServlet categorysServlet = new CategorysServletImpl();
 	

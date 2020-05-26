@@ -1,8 +1,10 @@
 package xxk.train.entity;
 
+import core.entity.CoreEntity;
+
 import java.sql.Timestamp;
 
-public class Order {
+public class Order extends CoreEntity {
 	//订单表
 	private int orderId;
 	@Override

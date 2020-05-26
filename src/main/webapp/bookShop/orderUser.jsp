@@ -116,8 +116,6 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 		<script type="text/html" id="currentTableBar">
             <a class="layui-btn layui-btn-xs layui-btn-danger data-count-delete" lay-event="delete">删除</a>
         </script>
-		
-		
 		</div>
 	</div>
 	<%--尾部--%>
@@ -135,18 +133,23 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
         //	http://localhost:8080/shopBook/manager/OrderAction
             elem: '#currentTableId',
             url: 'manager/OrderAction?method=getList&userId=${sessionScope.user.getUserId()}',
-            toolbar: '#toolbarDemo',
-            defaultToolbar: ['filter', 'exports', 'print', {
-                title: '提示',
-                layEvent: 'LAYTABLE_TIPS',
-                icon: 'layui-icon-tips'
-            }],
-            totalRow: true,
+			parseData:function (result) {
+				return {
+					"code":0,
+					"count":result.count,
+					"msg":result.msg,
+					"data":result.data
+				};
+			},
+           // toolbar: '#toolbarDemo',
             cols: [[
                // {type: "checkbox", width: 50, fixed: "left"},
                 {field: 'orderId',  title: '订单编号', sort: true ,totalRowText: '合计'},
                 //{field: 'userId',  title: '用户Id', sort: true},
-                {field: 'bookId',  title: '图书Id', sort: true},
+                {field: 'title',  title: '图书名',templet: function (d) {
+                	return d.dataMap.title1;
+
+					}},
                 {field: 'orderNum', title: '数量'},
                 {field:'orderName',title:'收件人'},
                 {field: 'orderAddr',title: '运货地址', sort: true},
@@ -166,7 +169,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
             ]],
             limits: [5, 10, 15, 20, 25, 30],
             limit: 5,
-            page: true
+			page: true //是否显示分页
         });// 监听搜索操作
         form.on('submit(data-search-btn)', function (data) {
         	 var transport = data.field.transport;

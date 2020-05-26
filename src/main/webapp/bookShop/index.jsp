@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -69,277 +71,308 @@
 				<!-- 1 -->
 				<div class="idx-title" id="right-zuobiao">
 					<span class="tit" >${categoryList.get(0).categoryName}</span>
-					<a href="" class="see-all">查看全部<i class="iconfont icon-xiangyou1"></i></a>
+					<a href="${ctx}/ShoppingUserAction?method=soSo&categoryId=${sessionScope.categoryList.get(0).categoryId}" class="see-all">查看全部<i class="iconfont icon-xiangyou1"></i></a>
 				</div>
 				<div class="idx-phone idx-box">
-					<div class="good-box" id="rm">
-					<c:forEach var="book" items="${book1}" end="10">
-						<div class="col-5 good-item">
-							<a href="${ctx }/GotoShopAction?bookId=${book.bookId}" class="pic"><img src="${book.image}"></a>
-							<h3 class="name"><a href="">${book.title}</a></h3>
-							<h4 class="desc">${book.contentDescription}</h4>
-							<p class="price "><span>${book.unitPrice}元</span><i>1900元</i></p>
-						</div>
-					</c:forEach>
-						<div class="col-5 good-item last-more">
-							<div class="good-top">
-								<div class="txt">
-									<h3>Air 13.3``2019款</h3>
-									<p>4999元起</p>
+					<div class="good-box" >
+						<c:forEach var="book" items="${book1}" end="${fn:length(book1)<10?fn:length(book1):10}" varStatus="status">
+							<c:if test="${status.last==false}">
+								<div class="col-5 good-item">
+									<a href="${ctx}/GotoShopAction?bookId=${book.bookId}" class="pic"><img src="${book.image}"></a>
+									<h3 class="name"><a href="">${book.title}</a></h3>
+									<h4 class="desc">${book.contentDescription}</h4>
+									<p class="price "><span>${book.unitPrice}元</span><i>${book.unitPrice+30}</i></p>
 								</div>
-								<a class="sm-img">
-									<img src="img/jiadian.jpg">
-								</a>
-							</div>
-							<div class="good-more">
-								<div class="txt">
-									<h3><a href="">浏览更多</a></h3>
-									<p>热门</p>
+							</c:if>
+							<c:if test="${status.last==true}">
+								<div class="col-5 good-item last-more">
+										<div class="good-top">
+											<div class="txt">
+												<h3>${book.title}</h3>
+												<p>${book.unitPrice}元</p>
+											</div>
+											<a class="sm-img">
+												<img src="${book.image}">
+											</a>
+										</div>
+									<div class="good-more">
+										<div class="txt">
+											<h3><a href="">浏览更多</a></h3>
+											<p>热门</p>
+										</div>
+										<i class="iconfont icon-youjiantou"></i>
+									</div>
 								</div>
-								<i class="iconfont icon-youjiantou"></i>
-							</div>
-						</div>
+							</c:if>
+						</c:forEach>
 					</div>
 				</div>
 				<div class="idx-title">
 					<span class="tit">${categoryList.get(1).categoryName}</span>
-					<a href="" class="see-all">查看全部<i class="iconfont icon-xiangyou1"></i></a>
+					<a href="${ctx}/ShoppingUserAction?method=soSo&categoryId=${sessionScope.categoryList.get(1).categoryId}" class="see-all">查看全部<i class="iconfont icon-xiangyou1"></i></a>
 				</div>
 				<div class="idx-phone idx-box">
-					<div class="good-box" id="rm">
-					<c:forEach var="book" items="${book2}" end="10">
-						<div class="col-5 good-item">
-							<a href="" class="pic"><img src="${book.image}"></a>
-							<h3 class="name"><a href="">${book.title}</a></h3>
-							<h4 class="desc">${book.contentDescription}</h4>
-							<p class="price "><span>${book.unitPrice}元</span><i>1900元</i></p>
-						</div>
-					</c:forEach>
-						<div class="col-5 good-item last-more">
-							<div class="good-top">
-								<div class="txt">
-									<h3>Air 13.3``2019款</h3>
-									<p>4999元起</p>
+					<div class="good-box" >
+						<c:forEach var="book" items="${book2}" end="${fn:length(book2)<10?fn:length(book2):10}" varStatus="status">
+							<c:if test="${status.last==false}">
+								<div class="col-5 good-item">
+									<a href="${ctx}/GotoShopAction?bookId=${book.bookId}" class="pic"><img src="${book.image}"></a>
+									<h3 class="name"><a href="">${book.title}</a></h3>
+									<h4 class="desc">${book.contentDescription}</h4>
+									<p class="price "><span>${book.unitPrice}元</span><i>${book.unitPrice+30}</i></p>
 								</div>
-								<a class="sm-img">
-									<img src="img/jiadian.jpg">
-								</a>
-							</div>
-							<div class="good-more">
-								<div class="txt">
-									<h3><a href="">浏览更多</a></h3>
-									<p>热门</p>
+							</c:if>
+							<c:if test="${status.last==true}">
+								<div class="col-5 good-item last-more">
+									<div class="good-top">
+										<div class="txt">
+											<h3>${book.title}</h3>
+											<p>${book.unitPrice}元</p>
+										</div>
+										<a class="sm-img">
+											<img src="${book.image}">
+										</a>
+									</div>
+									<div class="good-more">
+										<div class="txt">
+											<h3><a href="">浏览更多</a></h3>
+											<p>热门</p>
+										</div>
+										<i class="iconfont icon-youjiantou"></i>
+									</div>
 								</div>
-								<i class="iconfont icon-youjiantou"></i>
-							</div>
-						</div>
+							</c:if>
+						</c:forEach>
 					</div>
 				</div>
 				<div class="idx-title">
 					<span class="tit">${categoryList.get(2).categoryName}</span>
-					<a href="" class="see-all">查看全部<i class="iconfont icon-xiangyou1"></i></a>
+					<a href="${ctx}/ShoppingUserAction?method=soSo&categoryId=${sessionScope.categoryList.get(2).categoryId}" class="see-all">查看全部<i class="iconfont icon-xiangyou1"></i></a>
 				</div>
 				<div class="idx-phone idx-box">
-					<div class="good-box" id="rm" >
-					<c:forEach var="book" items="${book3}" end="10">
-						<div class="col-5 good-item">
-							<a href="" class="pic"><img src="${book.image}"></a>
-							<h3 class="name"><a href="">${book.title}</a></h3>
-							<h4 class="desc">${book.contentDescription}</h4>
-							<p class="price "><span>${book.unitPrice}元</span><i>1900元</i></p>
-						</div>
-					</c:forEach>
-						<div class="col-5 good-item last-more">
-							<div class="good-top">
-								<div class="txt">
-									<h3>Air 13.3``2019款</h3>
-									<p>4999元起</p>
+					<div class="good-box" >
+						<c:forEach var="book" items="${book3}" end="${fn:length(book3)<10?fn:length(book3):10}" varStatus="status">
+							<c:if test="${status.last==false}">
+								<div class="col-5 good-item">
+									<a href="${ctx}/GotoShopAction?bookId=${book.bookId}" class="pic"><img src="${book.image}"></a>
+									<h3 class="name"><a href="">${book.title}</a></h3>
+									<h4 class="desc">${book.contentDescription}</h4>
+									<p class="price "><span>${book.unitPrice}元</span><i>${book.unitPrice+30}</i></p>
 								</div>
-								<a class="sm-img">
-									<img src="img/jiadian.jpg">
-								</a>
-							</div>
-							<div class="good-more">
-								<div class="txt">
-									<h3><a href="">浏览更多</a></h3>
-									<p>热门</p>
+							</c:if>
+							<c:if test="${status.last==true}">
+								<div class="col-5 good-item last-more">
+									<div class="good-top">
+										<div class="txt">
+											<h3>${book.title}</h3>
+											<p>${book.unitPrice}元</p>
+										</div>
+										<a class="sm-img">
+											<img src="${book.image}">
+										</a>
+									</div>
+									<div class="good-more">
+										<div class="txt">
+											<h3><a href="">浏览更多</a></h3>
+											<p>热门</p>
+										</div>
+										<i class="iconfont icon-youjiantou"></i>
+									</div>
 								</div>
-								<i class="iconfont icon-youjiantou"></i>
-							</div>
-						</div>
+							</c:if>
+						</c:forEach>
 					</div>
 				</div>
 				<div class="idx-title">
 					<span class="tit">${categoryList.get(3).categoryName}</span>
-					<a href="" class="see-all">查看全部<i class="iconfont icon-xiangyou1"></i></a>
+					<a href="${ctx}/ShoppingUserAction?method=soSo&categoryId=${sessionScope.categoryList.get(3).categoryId}" class="see-all">查看全部<i class="iconfont icon-xiangyou1"></i></a>
 				</div>
 				<div class="idx-phone idx-box">
-					<div class="good-box" id="rm" >
-					<c:forEach var="book" items="${book4}" end="10">
-						<div class="col-5 good-item">
-							<a href="" class="pic"><img src="${book.image}"></a>
-							<h3 class="name"><a href="">${book.title}</a></h3>
-							<h4 class="desc">${book.contentDescription}</h4>
-							<p class="price "><span>${book.unitPrice}元</span><i>1900元</i></p>
-						</div>
-					</c:forEach>
-						<div class="col-5 good-item last-more">
-							<div class="good-top">
-								<div class="txt">
-									<h3>Air 13.3``2019款</h3>
-									<p>4999元起</p>
+					<div class="good-box" >
+						<c:forEach var="book" items="${book4}" end="${fn:length(book4)<10?fn:length(book4):10}" varStatus="status">
+							<c:if test="${status.last==false}">
+								<div class="col-5 good-item">
+									<a href="${ctx}/GotoShopAction?bookId=${book.bookId}" class="pic"><img src="${book.image}"></a>
+									<h3 class="name"><a href="">${book.title}</a></h3>
+									<h4 class="desc">${book.contentDescription}</h4>
+									<p class="price "><span>${book.unitPrice}元</span><i>${book.unitPrice+30}</i></p>
 								</div>
-								<a class="sm-img">
-									<img src="img/jiadian.jpg">
-								</a>
-							</div>
-							<div class="good-more">
-								<div class="txt">
-									<h3><a href="">浏览更多</a></h3>
-									<p>热门</p>
+							</c:if>
+							<c:if test="${status.last==true}">
+								<div class="col-5 good-item last-more">
+									<div class="good-top">
+										<div class="txt">
+											<h3>${book.title}</h3>
+											<p>${book.unitPrice}元</p>
+										</div>
+										<a class="sm-img">
+											<img src="${book.image}">
+										</a>
+									</div>
+									<div class="good-more">
+										<div class="txt">
+											<h3><a href="">浏览更多</a></h3>
+											<p>热门</p>
+										</div>
+										<i class="iconfont icon-youjiantou"></i>
+									</div>
 								</div>
-								<i class="iconfont icon-youjiantou"></i>
-							</div>
-						</div>
+							</c:if>
+						</c:forEach>
 					</div>
 				</div>
 				<div class="idx-title">
 					<span class="tit">${categoryList.get(4).categoryName}</span>
-					<a href="" class="see-all">查看全部<i class="iconfont icon-xiangyou1"></i></a>
+					<a href="${ctx}/ShoppingUserAction?method=soSo&categoryId=${sessionScope.categoryList.get(4).categoryId}" class="see-all">查看全部<i class="iconfont icon-xiangyou1"></i></a>
 				</div>
 				<div class="idx-phone idx-box">
-					<div class="good-box" id="rm"">
-					<c:forEach var="book" items="${book5}" end="10">
-						<div class="col-5 good-item">
-							<a href="" class="pic"><img src="${book.image}"></a>
-							<h3 class="name"><a href="">${book.title}</a></h3>
-							<h4 class="desc">${book.contentDescription}</h4>
-							<p class="price "><span>${book.unitPrice}元</span><i>1900元</i></p>
-						</div>
-					</c:forEach>
-						<div class="col-5 good-item last-more">
-							<div class="good-top">
-								<div class="txt">
-									<h3>Air 13.3``2019款</h3>
-									<p>4999元起</p>
+					<div class="good-box" >
+						<c:forEach var="book" items="${book5}" end="${fn:length(book5)<10?fn:length(book5):10}" varStatus="status">
+							<c:if test="${status.last==false}">
+								<div class="col-5 good-item">
+									<a href="${ctx}/GotoShopAction?bookId=${book.bookId}" class="pic"><img src="${book.image}"></a>
+									<h3 class="name"><a href="">${book.title}</a></h3>
+									<h4 class="desc">${book.contentDescription}</h4>
+									<p class="price "><span>${book.unitPrice}元</span><i>${book.unitPrice+30}</i></p>
 								</div>
-								<a class="sm-img">
-									<img src="img/jiadian.jpg">
-								</a>
-							</div>
-							<div class="good-more">
-								<div class="txt">
-									<h3><a href="">浏览更多</a></h3>
-									<p>热门</p>
+							</c:if>
+							<c:if test="${status.last==true}">
+								<div class="col-5 good-item last-more">
+									<div class="good-top">
+										<div class="txt">
+											<h3>${book.title}</h3>
+											<p>${book.unitPrice}元</p>
+										</div>
+										<a class="sm-img">
+											<img src="${book.image}">
+										</a>
+									</div>
+									<div class="good-more">
+										<div class="txt">
+											<h3><a href="">浏览更多</a></h3>
+											<p>热门</p>
+										</div>
+										<i class="iconfont icon-youjiantou"></i>
+									</div>
 								</div>
-								<i class="iconfont icon-youjiantou"></i>
-							</div>
-						</div>
+							</c:if>
+						</c:forEach>
 					</div>
 				</div>
 				<div class="idx-title">
 					<span class="tit">${categoryList.get(5).categoryName}</span>
-					<a href="" class="see-all">查看全部<i class="iconfont icon-xiangyou1"></i></a>
+					<a href="${ctx}/ShoppingUserAction?method=soSo&categoryId=${sessionScope.categoryList.get(5).categoryId}" class="see-all">查看全部<i class="iconfont icon-xiangyou1"></i></a>
 				</div>
 				<div class="idx-phone idx-box">
-					<div class="good-box" id="rm" >
-					<c:forEach var="book" items="${book6}" end="10">
-						<div class="col-5 good-item">
-							<a href="" class="pic"><img src="${book.image}"></a>
-							<h3 class="name"><a href="">${book.title}</a></h3>
-							<h4 class="desc">${book.contentDescription}</h4>
-							<p class="price "><span>${book.unitPrice}元</span><i>1900元</i></p>
-						</div>
-					</c:forEach>
-						<div class="col-5 good-item last-more">
-							<div class="good-top">
-								<div class="txt">
-									<h3>Air 13.3``2019款</h3>
-									<p>4999元起</p>
+					<div class="good-box" >
+						<c:forEach var="book" items="${book6}" end="${fn:length(book6)<10?fn:length(book6):10}" varStatus="status">
+							<c:if test="${status.last==false}">
+								<div class="col-5 good-item">
+									<a href="${ctx}/GotoShopAction?bookId=${book.bookId}" class="pic"><img src="${book.image}"></a>
+									<h3 class="name"><a href="">${book.title}</a></h3>
+									<h4 class="desc">${book.contentDescription}</h4>
+									<p class="price "><span>${book.unitPrice}元</span><i>${book.unitPrice+30}</i></p>
 								</div>
-								<a class="sm-img">
-									<img src="img/jiadian.jpg">
-								</a>
-							</div>
-							<div class="good-more">
-								<div class="txt">
-									<h3><a href="">浏览更多</a></h3>
-									<p>热门</p>
+							</c:if>
+							<c:if test="${status.last==true}">
+								<div class="col-5 good-item last-more">
+									<div class="good-top">
+										<div class="txt">
+											<h3>${book.title}</h3>
+											<p>${book.unitPrice}元</p>
+										</div>
+										<a class="sm-img">
+											<img src="${book.image}">
+										</a>
+									</div>
+									<div class="good-more">
+										<div class="txt">
+											<h3><a href="">浏览更多</a></h3>
+											<p>热门</p>
+										</div>
+										<i class="iconfont icon-youjiantou"></i>
+									</div>
 								</div>
-								<i class="iconfont icon-youjiantou"></i>
-							</div>
-						</div>
+							</c:if>
+						</c:forEach>
 					</div>
 				</div>
 				<div class="idx-title">
 					<span class="tit">${categoryList.get(6).categoryName}</span>
-					<a href="" class="see-all">查看全部<i class="iconfont icon-xiangyou1"></i></a>
+					<a href="${ctx}/ShoppingUserAction?method=soSo&categoryId=${sessionScope.categoryList.get(6).categoryId}" class="see-all">查看全部<i class="iconfont icon-xiangyou1"></i></a>
 				</div>
 				<div class="idx-phone idx-box">
-					<div class="good-box" id="rm" >
-					<c:forEach var="book" items="${book7}" end="10">
-						<div class="col-5 good-item">
-							<a href="" class="pic"><img src="${book.image}"></a>
-							<h3 class="name"><a href="">${book.title}</a></h3>
-							<h4 class="desc">${book.contentDescription}</h4>
-							<p class="price "><span>${book.unitPrice}元</span><i>1900元</i></p>
-						</div>
-					</c:forEach>
-						<div class="col-5 good-item last-more">
-							<div class="good-top">
-								<div class="txt">
-									<h3>Air 13.3``2019款</h3>
-									<p>4999元起</p>
+					<div class="good-box" >
+						<c:forEach var="book" items="${book7}" end="${fn:length(book7)<10?fn:length(book7):10}" varStatus="status">
+							<c:if test="${status.last==false}">
+								<div class="col-5 good-item">
+									<a href="${ctx}/GotoShopAction?bookId=${book.bookId}" class="pic"><img src="${book.image}"></a>
+									<h3 class="name"><a href="">${book.title}</a></h3>
+									<h4 class="desc">${book.contentDescription}</h4>
+									<p class="price "><span>${book.unitPrice}元</span><i>${book.unitPrice+30}</i></p>
 								</div>
-								<a class="sm-img">
-									<img src="img/jiadian.jpg">
-								</a>
-							</div>
-							<div class="good-more">
-								<div class="txt">
-									<h3><a href="">浏览更多</a></h3>
-									<p>热门</p>
+							</c:if>
+							<c:if test="${status.last==true}">
+								<div class="col-5 good-item last-more">
+									<div class="good-top">
+										<div class="txt">
+											<h3>${book.title}</h3>
+											<p>${book.unitPrice}元</p>
+										</div>
+										<a class="sm-img">
+											<img src="${book.image}">
+										</a>
+									</div>
+									<div class="good-more">
+										<div class="txt">
+											<h3><a href="">浏览更多</a></h3>
+											<p>热门</p>
+										</div>
+										<i class="iconfont icon-youjiantou"></i>
+									</div>
 								</div>
-								<i class="iconfont icon-youjiantou"></i>
-							</div>
-						</div>
+							</c:if>
+						</c:forEach>
 					</div>
 				</div>
 				<div class="idx-title">
 					<span class="tit">${categoryList.get(7).categoryName}</span>
-					<a href="" class="see-all">查看全部<i class="iconfont icon-xiangyou1"></i></a>
+					<a href="${ctx}/ShoppingUserAction?method=soSo&categoryId=${sessionScope.categoryList.get(7).categoryId}" class="see-all">查看全部<i class="iconfont icon-xiangyou1"></i></a>
 				</div>
 				<div class="idx-phone idx-box">
-					<div class="good-box" id="rm" >
-					<c:forEach var="book" items="${book8}" end="10">
-						<div class="col-5 good-item">
-							<a href="" class="pic"><img src="${book.image}"></a>
-							<h3 class="name"><a href="">${book.title}</a></h3>
-							<h4 class="desc">${book.contentDescription}</h4>
-							<p class="price "><span>${book.unitPrice}元</span><i>1900元</i></p>
-						</div>
-					</c:forEach>
-						<div class="col-5 good-item last-more">
-							<div class="good-top">
-								<div class="txt">
-									<h3>Air 13.3``2019款</h3>
-									<p>4999元起</p>
+					<div class="good-box" >
+						<c:forEach var="book" items="${book8}" end="${fn:length(book8)<10?fn:length(book8):10}" varStatus="status">
+							<c:if test="${status.last==false}">
+								<div class="col-5 good-item">
+									<a href="${ctx}/GotoShopAction?bookId=${book.bookId}" class="pic"><img src="${book.image}"></a>
+									<h3 class="name"><a href="">${book.title}</a></h3>
+									<h4 class="desc">${book.contentDescription}</h4>
+									<p class="price "><span>${book.unitPrice}元</span><i>${book.unitPrice+30}</i></p>
 								</div>
-								<a class="sm-img">
-									<img src="img/jiadian.jpg">
-								</a>
-							</div>
-							<div class="good-more">
-								<div class="txt">
-									<h3><a href="">浏览更多</a></h3>
-									<p>热门</p>
+							</c:if>
+							<c:if test="${status.last==true}">
+								<div class="col-5 good-item last-more">
+									<div class="good-top">
+										<div class="txt">
+											<h3>${book.title}</h3>
+											<p>${book.unitPrice}元</p>
+										</div>
+										<a class="sm-img">
+											<img src="${book.image}">
+										</a>
+									</div>
+									<div class="good-more">
+										<div class="txt">
+											<h3><a href="">浏览更多</a></h3>
+											<p>热门</p>
+										</div>
+										<i class="iconfont icon-youjiantou"></i>
+									</div>
 								</div>
-								<i class="iconfont icon-youjiantou"></i>
-							</div>
-						</div>
+							</c:if>
+						</c:forEach>
 					</div>
 				</div>
-						
 			</div>
 		</div>
 		<!-- 大内容区E -->
@@ -347,7 +380,6 @@
 		<%@ include file="include/bottom.jsp" %>
 		<!-- js -->
 		<!-- 倒计时 -->
-		
 		<script type="text/javascript">
 			// 这是右边导航栏的回到顶点的设置
 			var tit = document.getElementById("right-zuobiao");

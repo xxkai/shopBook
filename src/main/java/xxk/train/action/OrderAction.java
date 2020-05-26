@@ -15,7 +15,9 @@ import org.apache.commons.beanutils.BeanUtils;
 
 import xxk.train.entity.Order;
 import xxk.train.layui.layuiJSNO;
+import xxk.train.service.BookService;
 import xxk.train.service.OrderService;
+import xxk.train.service.impl.BooksServiceImpl;
 import xxk.train.service.impl.OrderServiceImpl;
 
 /**
@@ -24,6 +26,7 @@ import xxk.train.service.impl.OrderServiceImpl;
 public class OrderAction extends DispatcherAction {
 	private static final long serialVersionUID = 1L;
      OrderService orderService = new OrderServiceImpl();
+     BookService bookService = new BooksServiceImpl();
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -34,10 +37,7 @@ public class OrderAction extends DispatcherAction {
 		getOne(request,response);
 	}
 
-		public void getList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("UTF-8");
-		
+		public void getList(HttpServletRequest request, HttpServletResponse response) throws Exception {
     	String bookId = request.getParameter("bookId");
   		String userId = request.getParameter("userId");
   		String transport = request.getParameter("transport");
@@ -45,19 +45,24 @@ public class OrderAction extends DispatcherAction {
 		String limit= request.getParameter("limit");
   		bookId = bookId!=null&&bookId.length()>0?bookId:"0";
   		userId = userId!=null&&userId.length()>0?userId:"0";
-		try {
-		  List<Order> list = orderService.getList(Integer.valueOf(bookId), Integer.valueOf(userId), transport, Integer.valueOf(page), Integer.valueOf(limit));
-		  		int    num = orderService.getNum(Integer.valueOf(bookId), Integer.valueOf(userId));
-		  		String json = layuiJSNO.toJSNO(num, list);
-		  		System.out.println(json);
-		  		PrintWriter out = response.getWriter();
-		  		out.write(json);
-		  		out.flush();
-		  		out.close();
- 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
+  		List<Order> list = orderService.getList(Integer.valueOf(bookId), Integer.valueOf(userId), transport, Integer.valueOf(page), Integer.valueOf(limit));
+  		list.forEach(x ->{
+			  try {
+				  x.getDataMap().put("title1",bookService.getOne(x.getBookId()).getTitle());
+			  } catch (Exception e) {
+				  e.printStackTrace();
+			  }
+
+  		});
+
+		int num = orderService.getNum(Integer.valueOf(bookId), Integer.valueOf(userId));
+		String json = layuiJSNO.toJSNO(num, list);
+		System.out.println(json);
+		PrintWriter out = response.getWriter();
+		out.write(json);
+		out.flush();
+		out.close();
   		
     
     }

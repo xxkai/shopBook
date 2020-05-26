@@ -57,17 +57,6 @@ body {
 
 }
 
-.page-top .top-lt .dow-box b {
-	width: 20px;
-	height: 13px;
-	position: absolute;
-	background-image: url(../img/sjx.png);
-	left: 50%;
-	margin-left: -10px;
-	top: -13px;
-
-}
-
 .page-top .top-lt .download i {
 	font-style: normal;
 	color: #323232;
@@ -102,79 +91,6 @@ body {
 .page-top .top-gt a:hover {
 	color: #fff;
 }
-
-.page-top .userinfo {
-	float: right;
-	margin-right: 20px;
-
-}
-
-.page-top .userinfo .user {
-	width: 120px;
-	display: inline-block;
-	position: relative;
-}
-
-.page-top .userinfo .link {
-	line-height: 38px;
-	color: #a2a2a2;
-}
-
-.page-top .userinfo span {
-	padding: 0 3px;
-	color: 3f3f3f;
-}
-
-.page-top .userinfo .user .tit {
-	line-height: 38px;
-	text-align: center;
-	display: block;
-	color: #a2a2a2;
-	position: relative;
-	z-index: 1000;
-}
-
-.page-top .userinfo .user ul {
-	display: none;
-	position: absolute;
-	left: 0;
-	/* top: 38px; */
-	width: 120px;
-	padding: 10px 0;
-	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-}
-
-.page-top .userinfo li {
-	line-height: 30px;
-	text-align: center;
-}
-
-.page-top .userinfo li a {
-	display: block;
-}
-
-.page-top .userinfo li:hover {
-	color: #ff6700;
-	background-clip: #f5f5f5;
-}
-
-.page-top .userinfo li a:hover {
-	color: #ff6700;
-	background-clip: #f5f5f5;
-}
-
-.page-top .userinfo .user:hover {
-	background-color: #fff;
-}
-
-.page-top .userinfo .user:hover .tit {
-	color: #ff6700;
-}
-
-.page-top .userinfo .user:hover ul {
-	display: block;
-}
-
 .page-top .car-box {
 	float: right;
 	position: relative;
@@ -309,7 +225,7 @@ body {
 
 
 .page-top .car-box .pop:hover .tit {
-	background-clip: #fff;
+	background-color: #fff;
 	color: #ff6700;
 }
 
@@ -331,7 +247,8 @@ body {
 	width: 54px;
 	height: 54px;
 	margin-top: 21px;
-	background: #FF6700 url(../img/mi-logo1.png) center center no-repeat;
+	background: #ff6700 url(../imge/logo.png) center center no-repeat;
+	background-size: 100% 100%;
 	margin-right: 45px;
 }
 
@@ -516,7 +433,7 @@ body {
 .search .hot li a {
 	display: block;
 	padding: 0 15px;
-	color: 535353;
+	color: #535353;
 }
 
 .search .hot li:hover {
@@ -626,21 +543,7 @@ body {
 	color: #fff;
 	background-color:#FF6700;
 }
-.page-foot .bot{
-	margin-top: 40px;
-	padding-top: 30px;
-	height: 250px;
-	background: #FAFAFA url(../img/slogan2016.png) center 220px no-repeat;
-	overflow: hidden;
-}
-.page-foot .bot .logo{
-	display: block;
-	float: left;
-	width: 54px;
-	height: 54px;
-	background: #FF6700 url(../img/mi-logo1.png) center center no-repeat;
 
-}
 .page-foot .bot .txt{
 	width: 1142px;
 	float: right;
@@ -672,7 +575,7 @@ body {
 .page-foot .bot .txt li{
 	width: 84px;
 	height: 28px;
-	display: block;d
+	display: block;
 }
 .page-foot .bot .txt li{
 	float: left;
@@ -680,13 +583,10 @@ body {
 }
 #right-gd {
 	position: fixed;
-	top: 270px;
+	top: 400px;
 	left: 1290px;
 	width: 50px;
-	height: 270px;/**546px**/
-	box-shadow: 0 3px 4px rgba(0, 0, 0, 0.18);
-	border-top: 1px solid #E0E0E0;
-	/* border: 1px solid red; */
+	height: 50px;/**546px**/
 	margin-bottom: 100px;
 	z-index: 99;
 }
@@ -703,7 +603,7 @@ body {
 	/* border: 1px solid red; */
 	margin-top: 4px;
 	font-size: 20px;
-} 
+}
 #right-gd .p2{
 	font-size: 2px;
 	

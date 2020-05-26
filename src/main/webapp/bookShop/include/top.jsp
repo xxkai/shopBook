@@ -4,24 +4,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		
         <!--  -->
 		<meta charset="utf-8" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>网上图书商城</title>
 		<!-- 重置样式，处理样式 -->
 		<link rel="stylesheet" type="text/css" href="${ctx}/bookShop/css/reset.css" />
-		<!-- 公共的css -->
-		<link rel="stylesheet" type="text/css" href="${ctx}/bookShop/css/style.css" />
-		<!-- 首页的css -->
-		<link rel="stylesheet" type="text/css" href="${ctx}/bookShop/css/index.css" />
+		<link rel="stylesheet" type="text/css" href="${ctx}/bookShop/css/style.css"/>
 		<!-- 字体图标样式 -->
 		<link rel="stylesheet" href="${ctx}/bookShop/font/iconfont.css" />
-		<!-- 引入网页标题图标 -->
-		<link rel="shortcut icon" href="${ctx}/bookShop/img/icons/favicon.ico" type="image/x-icon">
-		<script type="text/javascript" src="${ctx}/bookShop/js/index.js">
-		</script>
-		<script src="${ctx}/bookShop/js/jquery.min.js"></script>
 		<style type="text/css">
 		.page-nav .search .btn {
 			width: 50px;
@@ -34,7 +25,6 @@
 			background-size: 16px 16px;
 		
 		}
-
 		.page-nav .search .btn:hover {
 			background-color: #FF6700;
 			background-image: url(${ctx}/bookShop/imge/sousuo1.png);
@@ -88,7 +78,7 @@
 		<div class="page-nav">
 			<div class="container">
 				<!-- logo -->
-				<a href="" class="logo"></a>
+				<a href="http://localhost:8080/list/" class="logo"></a>
 				<!-- 导航 -->
 				<ul class="nav">
 					<li class="nav-item" id="pag-all-nav">

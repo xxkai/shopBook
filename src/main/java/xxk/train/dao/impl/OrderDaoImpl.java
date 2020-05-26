@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import xxk.train.dao.BookDao;
 import xxk.train.dao.OrderDao;
 import xxk.train.entity.Order;
 import xxk.train.entity.Storein;
@@ -17,11 +18,13 @@ import xxk.train.entity.User;
 import xxk.train.util.DruidUtil;
 
 public class OrderDaoImpl implements OrderDao {
+	private BookDao bookDao = new BookDaoImpl();
 
 	@Override
 	public int insert(Order order) throws Exception {
+		/*添加*/
 	Connection con = DruidUtil.getConn();
-		String sql1 = "select unitPrice,clicks,num from books where bookId = "+order.getBookId();
+		String sql1 = "select unitPrice,clicks,num from book where bookId = "+order.getBookId();
 		double money=0;
 		int clicks = 0;
 		int num = 0;
@@ -34,7 +37,7 @@ public class OrderDaoImpl implements OrderDao {
 		}
 		clicks =clicks +1;
 		num = num-order.getOrderNum();
-		String sql1_1 = "update books set num="+num+",clicks="+clicks+" where  bookId ="+order.getBookId();
+		String sql1_1 = "update book set num="+num+",clicks="+clicks+" where  bookId ="+order.getBookId();
 		pstmt = con.prepareStatement(sql1_1);
 		pstmt.executeUpdate();
 		
@@ -47,8 +50,7 @@ public class OrderDaoImpl implements OrderDao {
 		storeout.setUserName(user.getUserName());
 		storeout.setStoreoutNum(order.getOrderNum());
 		storeoutDaoImpl.insert(storeout);
-		
-
+		//得到订单表
 		String sql2 = "insert `order`(bookId,userId,orderNum,orderName,orderAddr,transport,totalPrice) values(?,?,?,?,?,?,?) ";
 		pstmt = con.prepareStatement(sql2);
 		pstmt.setInt(1, order.getBookId());

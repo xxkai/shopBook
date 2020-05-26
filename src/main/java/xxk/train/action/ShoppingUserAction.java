@@ -18,7 +18,7 @@ import xxk.train.entity.Category;
 import xxk.train.entity.Order;
 import xxk.train.entity.User;
 import xxk.train.layui.layuiJSNO;
-import xxk.train.service.BooksService;
+import xxk.train.service.BookService;
 import xxk.train.service.CategorysServlet;
 import xxk.train.service.OrderService;
 import xxk.train.service.UserService;
@@ -31,7 +31,7 @@ import xxk.train.service.impl.UserServiseImpl;
 public class ShoppingUserAction extends DispatcherAction {
 	//获取图书的对象，将图书按照类型放在map中，map(类型表，图书数组）
 	private CategorysServlet categorysServlet = new CategorysServletImpl();	
-	private 	BooksService booksService = new BooksServiceImpl();
+	private BookService booksService = new BooksServiceImpl();
 	private static final long serialVersionUID = 1L;
     public ShoppingUserAction() {
         super();
@@ -62,7 +62,7 @@ public class ShoppingUserAction extends DispatcherAction {
 	}
 	//进行登陆时所跳转的界面内容
 	public void firstBooks1(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		BooksService booksService = new BooksServiceImpl();
+		BookService booksService = new BooksServiceImpl();
 		CategorysServlet categorysServlet = new CategorysServletImpl();	
 		try {
 			HttpSession session = request.getSession(true);
@@ -85,7 +85,7 @@ public class ShoppingUserAction extends DispatcherAction {
 		String num = request.getParameter("num");
 		
 		UserService userService = new UserServiseImpl();
-		BooksService booksService = new BooksServiceImpl();
+		BookService booksService = new BooksServiceImpl();
 		try {
 			//不需要添加user类因为已经放到session中了
 			List<Category> categoryList = categorysServlet.getList();

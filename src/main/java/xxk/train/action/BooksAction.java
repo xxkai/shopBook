@@ -22,12 +22,12 @@ import org.apache.commons.io.FilenameUtils;
 
 import xxk.train.entity.Book;
 import xxk.train.layui.layuiJSNO;
-import xxk.train.service.BooksService;
+import xxk.train.service.BookService;
 import xxk.train.service.impl.BooksServiceImpl;
 
 public class BooksAction extends DispatcherAction {
 	private static final long serialVersionUID = 1L;
-   BooksService booksService = new BooksServiceImpl();
+   BookService booksService = new BooksServiceImpl();
     public BooksAction() {
         super();
     }
@@ -53,9 +53,9 @@ public class BooksAction extends DispatcherAction {
 			e.printStackTrace();
 		}
 			System.out.println(books);
-		
 
-			
+
+
     }
     public void insert(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	String fullName = "";
@@ -116,7 +116,7 @@ public class BooksAction extends DispatcherAction {
 		String title = request.getParameter("title");
 		System.out.println(title);
 		String author = request.getParameter("author");
-		BooksService booksService = new BooksServiceImpl();
+		BookService booksService = new BooksServiceImpl();
 		Book books = new Book();
 		books.setTitle(title);
 		books.setAuthor(author);
@@ -139,7 +139,7 @@ public class BooksAction extends DispatcherAction {
 		response.setCharacterEncoding("UTF-8");
 		String page = request.getParameter("page");
 		String author = request.getParameter("author");
-		BooksService booksService = new BooksServiceImpl();
+		BookService booksService = new BooksServiceImpl();
 		Book books = new Book();
 		try {
 			int num =booksService.booksNum(books);

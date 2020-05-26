@@ -6,10 +6,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<!-- 搜索 -->
-<!-- 	<meta name="description" content="小米商城直营小米公司旗下所有产品，包括小米手机系列小米CC9 美图手机定制版、小米9、小米MIX Alpha，Redmi 红米系列Redmi K30、Redmi Note 8，小米电视、笔记本、米家智能家居等，同时提供小米客户服务及售后支持" />
-		<meta name= "keywords" content="小米,RedmiNote8Pro,小米cc9,Redmi K30,美图手机,小米MIX Alpha,小米商城" />-->
-<title>小米商城</title>
+<title>网上书城</title>
 <!-- 重置样式，处理样式 -->
 
     <link rel="stylesheet" href="${ctx}/manager/lib/layui-v2.5.5/css/layui.css" media="all">
@@ -31,7 +28,7 @@
 	type="image/x-icon">
  <link rel="icon" href="${ctx}/manager/images/favicon.ico">
 <script type="text/javascript" src="${ctx}/bookShop/js/index.js">
-	
+
 </script>
 <script src="${ctx}/bookShop/js/jquery.min.js"></script>
 <style type="text/css">
@@ -99,14 +96,10 @@
 		<div class="container" style=" height:0px;">
 		<div style="width: 700px;   margin: 30px auto;">
 		<h3 style="text-align: center;font-size: 30px;color: #fd9;line-height:70px;">欢迎来到购物车</h3>
-		<c:if test="${ empty cartsListsss}">
-		
-			<div style="color: #ff3478 ;width:100% ;height:40px;text-align: center;font-size: 20px;cursor:pointer;" ><a href="${ctx}/ShoppingUserAction?method=firstBooks1">购物车中没有商品,请点击回到主界面进行添加</a></div> 
-		 
-		 
+		<c:if test="${ empty cartsList}">
+			<div style="color: #ff3478 ;width:100% ;height:40px;text-align: center;font-size: 20px;cursor:pointer;" ><a href="${ctx}/ShoppingUserAction?method=firstBooks1">购物车中没有商品,请点击回到主界面进行添加</a></div>
 		 </c:if>
 		<div style="float:left;background-color: #fff;">
-		
 		<c:if test="${not empty cartsList}">		
 		<table style="border: 1px red solid;">
 			<tr>
@@ -150,114 +143,8 @@
 	</div>
 	</div>
 	<!--=========购物结束======== -->
-	
-	<div class="page-foot">
-		<div class="container">
-			<ul class="ts">
-				<li><a href=""><i class="iconfont icon-weixiu"></i>预约维修服务</a></li>
-				<li><a href=""><i class="iconfont icon-sevenday-copy"></i>7天无理由退货</a></li>
-				<li><a href=""><i class="iconfont icon-tian"></i>15天免费换货</a></li>
-				<li><a href=""><i class="iconfont icon-libao"></i>满99元包邮（试运行）</a></li>
-				<li><a href=""><i class="iconfont icon-zuobiao"></i>520余家售后网点</a></li>
-			</ul>
-			<div class="nav">
-				<div class="lt">
-					<dl>
-						<dt>
-							<a href="">帮助中心</a>
-						</dt>
-						<dd>账户管理</dd>
-						<dd>购物指南</dd>
-						<dd>订单操作</dd>
-					</dl>
-					<dl>
-						<dt>
-							<a href="">服务支持</a>
-						</dt>
-						<dd>售后政策</dd>
-						<dd>自助服务</dd>
-						<dd>相关下载</dd>
-					</dl>
-					<dl>
-						<dt>线下门店</dt>
-						<dd>小米之家</dd>
-						<dd>服务网点</dd>
-						<dd>授权体验店</dd>
-					</dl>
-					<dl>
-						<dt>关于小米</dt>
-						<dd>了解小米</dd>
-						<dd>加入小米</dd>
-						<dd>投资者关系</dd>
-					</dl>
-					<dl>
-						<dt>关注我们</dt>
-						<dd>新浪微博</dd>
-						<dd>官方微信</dd>
-						<dd>联系我们</dd>
-					</dl>
-					<dl>
-						<dt>特色服务</dt>
-						<dd>F 码通道</dd>
-						<dd>礼物码</dd>
-						<dd>防伪查询</dd>
-					</dl>
-				</div>
-				<div class="gt">
-					<h3>400-100-5678</h3>
-
-					<h4>周一至周日 8:00-18:00</h4>
-					<p>（仅收市话费）</p>
-					<a href="" class="concat"><i class="iconfont icon-xinxi">联系客服</i></a>
-				</div>
-			</div>
-			<div class="bot">
-				<div class="container">
-					<a href="" class="logo"></a>
-					<div class="txt">
-						<h3 class="list">
-							<a href="">小米商城</a><span>|</span> <a href="">MIUI</a><span>|</span><a
-								href="">米家</a><span>|</span> <a href="">米聊</a><span>|</span><a
-								href="">多看</a><span>|</span> <a href="">游戏</a><span>|</span><a
-								href="">音乐</a><span>|</span> <a href=""> 路由器 </a><span>|</span><a
-								href="">米粉卡</a><span>|</span> <a href="">政企服务</a><span>|</span><a
-								href="">小米天猫店</a><span>|</span> <a href="">小米集团隐私政策</a><span>|</span><a
-								href="">小米公司儿童信息保护规则</a><span>|</span> <a href="">小米商城隐私政策</a><span>|</span><a
-								href="">小米商城用户协议</a><span>|</span> <a href="">问题反馈</a><span>|</span><a
-								href="">廉正举报</a><span>|</span> <a href="">政企服务</a><span>|</span><a
-								href="">诚信合规</a><span>|</span> <a href="">Select Location</a><span>|</span>
-						</h3>
-						<p>
-							<a href="">© mi.com</a><a href="">京ICP证110507号</a> <a href="">京ICP备10046444号
-							</a> <a href="">京公网安备11010802020134号</a> <a href="">京网文[2017]1530-131号</a>
-						</p>
-						<p>
-							<a href="">（京）网械平台备字（2018）第00005号</a> <a href="">互联网药品信息服务资格证
-								(京)-非经营性-2014-0090</a> <a href="">营业执照</a> <a href="">医疗器械质量公告</a>
-						</p>
-						<p>
-							<a href="">增值电信业务许可证</a><a href="">网络食品经营备案（京）【2018】WLSPJYBAHF-12</a><a
-								href="">食品经营许可证</a>
-						</p>
-						<p>违法和不良信息举报电话：185-0130-1238 知识产权侵权投诉
-							本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</p>
-						<p>TRUSTe Privacy Certification 诚信网站 可信网站 诚信经营 放心消费</p>
-						<P>探索黑科技，小米为发烧而生</P>
-						<ul>
-							<li><a href=""><img src="imgs/truste.png"></a></li>
-							<li><a href=""><img src="imgs/v-logo-2.png"></a></li>
-							<li><a href=""><img src="imgs/v-logo-1.png"></a></li>
-							<li><a href=""><img src="imgs/v-logo-3.png"></a></li>
-							<li></li>
-							<li></li>
-						</ul>
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</div>
-	
+	<%@ include file="include/bottom.jsp" %>
+<%--	这是地区插件  --%>
 <script type="text/javascript" src="${ctx}/manager/js/area.js"></script>
 <script src="${ctx}/manager/lib/layui-v2.5.5/layui.js?v=1.0.4" charset="utf-8"></script>
 <script src="${ctx}/manager/js/lay-config.js?v=1.0.4" charset="utf-8"></script>

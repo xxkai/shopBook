@@ -31,7 +31,7 @@ public class Email {
             Session session = Session.getDefaultInstance(properties, new Authenticator() {
                 public PasswordAuthentication getPasswordAuthentication() {
                 // 发件人邮箱账号、授权码，就是之前配置的账号密码
-                    return new PasswordAuthentication("1460009038@qq.com", "uromycggdlfoiefj"); 
+                    return new PasswordAuthentication("1460009038@qq.com", "nlglrenbcynxfgab");
                 }
             });
 

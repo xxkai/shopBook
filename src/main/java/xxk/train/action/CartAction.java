@@ -51,9 +51,6 @@ public class CartAction extends DispatcherAction {
     
     }
     public void insertCart(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		//HttpSession session = request.getSession(true);
-		request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("UTF-8");
     	User user =(User) request.getSession().getAttribute("user");
 		int userId = user.getUserId();
 		System.out.println(userId);
@@ -69,16 +66,8 @@ public class CartAction extends DispatcherAction {
 		 out.write(layuiJSNO.tomageJSNO("reslut", "1"));
 		 out.flush();
 		 out.close();
-		//request.getRequestDispatcher("bookShop/index.jsp").forward(request, response);;
-		//
 	}
     public void updateNum(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		//HttpSession session = request.getSession(true);
-		request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("UTF-8");
-		//CartService cartService = new CartServiceImpl();
-    	//CategorysServlet categorysServlet = new CategorysServletImpl();
-		//	List<Categorys> categoryList =categorysServlet.getList();
 			User user =(User) request.getSession().getAttribute("user");
 			int userId = user.getUserId();
 			String index = request.getParameter("index");
@@ -94,7 +83,6 @@ public class CartAction extends DispatcherAction {
 			response.getWriter().close();
     }
     public void deleteCart(HttpServletRequest request, HttpServletResponse response) throws Exception {
-    		//CartService cartService = new CartServiceImpl();
 			User user =(User) request.getSession().getAttribute("user");
 			int userId = user.getUserId();
 			String index = request.getParameter("index");

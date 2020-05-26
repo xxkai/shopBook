@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="${ctx}/manager/css/layuimini.css" media="all">
 <link rel="stylesheet" href="${ctx}/manager/css/public.css" media="all">
 <link rel="stylesheet" href="${ctx}/manager/lib/font-awesome-4.7.0/css/font-awesome.min.css" media="all">
-   
+
 <link rel="stylesheet" type="text/css"
 	href="${ctx}/bookShop/css/reset.css" />
 <!-- 公共的css -->
@@ -28,9 +28,9 @@
 <!-- 引入网页标题图标 -->
 <link rel="shortcut icon" href="${ctx}/bookShop/img/icons/favicon.ico"
 	type="image/x-icon">
- 
+
 <script type="text/javascript" src="${ctx}/bookShop/js/index.js">
-	
+
 </script>
 <script src="${ctx}/bookShop/js/jquery.min.js"></script>
 <style type="text/css">

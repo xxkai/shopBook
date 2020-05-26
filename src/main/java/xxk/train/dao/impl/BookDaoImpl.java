@@ -1,6 +1,6 @@
 package xxk.train.dao.impl;
 
-import xxk.train.dao.BooksDao;
+import xxk.train.dao.BookDao;
 import xxk.train.entity.Book;
 import xxk.train.util.DruidUtil;
 
@@ -12,8 +12,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookDaoImpl implements BooksDao {
-
+public class BookDaoImpl implements BookDao {
     @Override
     public int insert(Book book) throws Exception {
         String sql = "insert into ";
@@ -68,19 +67,19 @@ public class BookDaoImpl implements BooksDao {
                 sql += vList.get(i) + ");";
             }
         }
+        System.out.println(sql);
         Connection con = DruidUtil.getConn();
         PreparedStatement pstmt  = con.prepareStatement(sql);
         int result = pstmt.executeUpdate();
         DruidUtil.close(null, null, pstmt, con);
         return result;
     }
-
     @Override
     public int update(Book book) throws Exception {
         // 定义一个sql字符串
         if (book.getBookId()!=0&&book!=null) {
             //	UPDATE 表名称 SET 列名称 = 新值 WHERE 列名称 = 某值
-            String sql = "update books set ";
+            String sql = "update book set ";
             Class<Book> c = Book.class;
             // 得到对象中所有的方法
             Method[] methods = c.getMethods();
@@ -95,8 +94,7 @@ public class BookDaoImpl implements BooksDao {
                 String mName = method.getName();
                 if (mName.startsWith("get") && !mName.startsWith("getClass")) {
                     String fieldName = mName.substring(3, mName.length());
-                    if (fieldName.equals("BookId"))
-                        continue;
+                    if (fieldName.equals("BookId")) continue;
                     mList.add(fieldName);
                     try {
                         Object value = method.invoke(book, null);// 将该方法的返回值返回给调用者
@@ -128,6 +126,7 @@ public class BookDaoImpl implements BooksDao {
             }
             int result = 0;
             try {
+                System.out.println(sql);
                 Connection con = DruidUtil.getConn();
                 PreparedStatement pstmt= con.prepareStatement(sql);
                 result = pstmt.executeUpdate();
@@ -142,10 +141,9 @@ public class BookDaoImpl implements BooksDao {
         // 得到对象的类
         return 0;
     }
-
     @Override
     public int delete(Integer id) throws Exception {
-        String sql = "delete from books where bookId="+id;
+        String sql = "delete from book where bookId="+id;
         int result = 0 ;
         try {
             Connection con = DruidUtil.getConn();
@@ -159,7 +157,6 @@ public class BookDaoImpl implements BooksDao {
 
         return result;
     }
-
     @Override
     public Book getOne(Integer id) throws Exception {
         Book book = new Book();
@@ -168,12 +165,11 @@ public class BookDaoImpl implements BooksDao {
         book = books.get(0);
         return book;
     }
-
     @Override
     public List<Book> getList(Book book, int page, int limit) throws Exception {
         List<Book> list = new ArrayList<Book>();
         Connection con =DruidUtil.getConn();
-        String sql = "select * from books where 1 = 1 ";
+        String sql = "select * from book where 1 = 1 ";
         sql = sql +BookDaoImpl.getCon(book);
         if (page !=0 &&limit !=0) {
             sql = sql +"	LIMIT "+(page-1)*limit+","+limit;

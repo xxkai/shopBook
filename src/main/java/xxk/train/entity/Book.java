@@ -3,7 +3,7 @@ package xxk.train.entity;
 import core.entity.CoreEntity;
 
 //图书表
-public class Book extends CoreEntity {
+public class Book  {
 	private int bookId;
 	private String title;
 	private String author;
